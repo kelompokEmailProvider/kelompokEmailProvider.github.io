@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Create your own ITSMail account for free</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel = "stylesheet" href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+<style> 
+  * {
+    box-sizing: border-box;
+    }
+      header {
+        height: 65px;
+        width: 100%;
+        background-color: #f1faee;
+        position :fixed;
+        top: 0;
+        z-index: 10;
+    }
+    .container {
+        max-width: 1170px;
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    .header-left {
+        float: left;
+    }    
+    .logo {
+        width: 175px;
+        margin-top: 5px;
+    }
+    .header-right {
+        float: right;
+        margin-right: -25px;
+    }
+    .header-right a {
+        line-height: 65px;
+        padding: 0 25px;
+        color: black;
+        display: block;
+        float: left;
+        transition: all 0.5s;
+        text-decoration: none;
+    }
+    .header-right a:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+  style.css
+    .label {float: left; width: 120px;}
+    .first {width: 200px; }
+    .last {width: 200px; }
+    .email {width: 200px; }
+    .password {width: 200px; }
+    .confpass {width: 200px; }
+    .notelp {width: 200px; }
+    .error { color: red; padding-left: 10px; }
+    .error1 { color: red; padding-left: 10px; }
+    .error2 { color: red; padding-left: 10px; }
+    .error3 { color: red; padding-left: 10px; }
+    .error4 { color: red; padding-left: 10px; }
+    .error5 { color: red; padding-left: 10px; }
+    .error6 { color: red; padding-left: 10px; }
+    .submit { margin-left: 125px; margin-top: 10px;}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-left">
+            <img style="margin-top: 0%;" class="logo" src="img/LOGO.png">
+        </div>
+        <div class="header-right">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+</header>
+<div class="container" style="margin-top:150px">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 style="text-align: center;">Create Account</h3>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top:20px">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8" style="background-color: #a8dadc;">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <script>
+                    $(document).ready(function() {
+                        $('.error').hide();
+                        $('.error1').hide();
+                        $('.error2').hide();
+                        $('.error3').hide();
+                        $('.error4').hide();
+                        $('.error5').hide();
+                        $('.error6').hide();
+                        $('.submit').click(function(event){
+                            var data1=$('.first').val();
+                            var len1=data1.length;
+                            if(len1<1){
+                                $('.error1').show();
+                                event.preventDefault();
+                            }
+                            else{
+                                $('.error1').hide();
+                            }
+                            var data2=$('.last').val();
+                            var len2=data2.length;
+                            if(len2<1){
+                                $('.error2').show();
+                                event.preventDefault();
+                            }
+                            else{
+                                $('.error2').hide();
+                            }
+                            var data3=$('.email').val();
+                            var len3=data3.length;
+                            if(len3<1){
+                                $('.error3').show();
+                                event.preventDefault();
+                            }
+                            else{
+                                $('.error3').hide();
+                            }
+                            var data=$('.password').val();
+                            var len=data.length;
+                            if(len<1){
+                                $('.password').next().show();
+                            }
+                            else{
+                                $('.password').next().hide();
+                            }
+                            if($('.password').val() !=$('.confpass').val()){
+                                $('.confpass').next().show();
+                            }
+                            else{
+                                $('.confpass').next().hide();
+                            }
+                            event.preventDefault();
+                            var data4=$('.notelp').val();
+                            if(validate_phoneno(data4)){
+                            $('.error4').hide();
+                            }
+                            else{
+                            $('.error4').show();
+                            event.preventDefault();
+                            }
+                            var data6=$('.dob').val();
+                            var len6=data6.length;
+                            if(len6<1){
+                                $('.error6').show();
+                                event.preventDefault();
+                            }
+                            else{
+                                $('.error6').hide();
+                            }
+                            count=0;
+                            $('div').find(':radio').each(function(){
+                                if($(this).is(':checked')){
+                                    count++;
+                                }
+                            });
+                            if(count==0){
+                                $('.error5').show();
+                            }
+                            else{
+                                $('.error5').hide();
+                            }
+                            event.preventDefault(); 
+                        });
+                        $( function() {
+                            $( "#datepicker" ).datepicker({
+                                changeYear : true ,
+                                changeMonth : true ,
+                                yearRange: "1900:2015" ,
+
+                            });
+                        });
+                        function validate_phoneno(ph){
+                            var pattern=new RegExp(/^[0-9-+]+$/);
+                            return pattern.test(ph);
+                        }
+                    });
+                </script>
+                <form id="signup" method="post" action="" style="margin-top: 50px; margin-bottom: 50px;">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: left; font-weight: bold;">First Name</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="first" name="first" placeholder="First Name"/>
+                            <span class="error1">
+                                <p style="font-size:11px; text-align: right;">*This field cannot be blank</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: right; font-weight: bold;">Last Name</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="last" name="last" placeholder="Last Name"/>
+                            <span class="error2">
+                                <p style="font-size:11px; text-align: right;">*This field cannot be blank</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: left; font-weight: bold;">Email</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="email" name="email" placeholder="Email"/>
+                            <span class="error3">
+                                <p style="font-size:11px; text-align: right;">*This field cannot be blank</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="label">
+                                <p style="font-size:16px; text-align: left;"> @itsmail.com</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: left; font-weight: bold;">Password</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="password" class="password" name="password" placeholder="Password">
+                            <span class="error">
+                                <p style="font-size:11px; text-align: right;">*This field cannot be blank</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: right; font-weight: bold;">Confirm Password</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="password" class="confpass" name="confpass" placeholder="Confirm Password">
+                            <span class="error">
+                                <p style="font-size:11px; text-align: right;">*Password and confirm password not match</p>
+                            </span>
+                        </div>   
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: left; font-weight: bold;">Telp. Numb. </p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="notelp" name="notelp" placeholder="Telephone Number"/>
+                            <span class="error4">
+                                <p style="font-size:11px; text-align: right;">*Only number and '+' allowed</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: left; font-weight: bold;">DoB. </p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="dob" id="datepicker" style="width: 200px;"/>
+                            <span class="error6">
+                                <p style="font-size:11px; text-align: right;">*Select your date of birth</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="label">
+                                <p style="font-size:14px; text-align: right; font-weight: bold;">Gender</p>
+                            </span>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="radio" name="gender" class="infobox" value="Male">  Male<br>
+                            <input type="radio" name="gender" class="infobox" value="Female">  Female<br>
+                        </div>
+                    </div>
+                    <input class="submit" type="submit" value="Submit">
+                    <span class="error5">
+                        <p style="font-size:11px; text-align: right;">*Select one gender</p>
+                    </span>
+                </form>   
+            </div>
+                    
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <div class="col-sm-2"> 
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<!--Tio Arya Dewa Prakasa, 05211940000063-->
+<!--Reference : yahoo.com-->
