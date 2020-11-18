@@ -1,3 +1,6 @@
+<!--Tio Arya Dewa Prakasa, 05211940000063-->
+<!--Reference : https://login.yahoo.com/account/create?.intl=id&.lang=id-ID&src=fpctx&pspid=965640046&.done=https%3A%2F%2Fid.yahoo.com&specId=yidReg&done=https%3A%2F%2Fid.yahoo.com-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  
-<style> 
+  <style> 
   * {
     box-sizing: border-box;
     }
@@ -22,6 +25,7 @@
         position :fixed;
         top: 0;
         z-index: 10;
+        box-shadow: 8px 8px 5px rgb(179, 179, 179);
     }
     .container {
         max-width: 1170px;
@@ -54,12 +58,12 @@
     }
   style.css
     .label {float: left; width: 120px;}
-    .first {width: 200px; }
-    .last {width: 200px; }
-    .email {width: 200px; }
-    .password {width: 200px; }
-    .confpass {width: 200px; }
-    .notelp {width: 200px; }
+    .first {max-width: 100%; }
+    .last {max-width: 100%; }
+    .email {max-width: 100%; }
+    .password {max-width: 100%; }
+    .confpass {max-width: 100%; }
+    .notelp {max-width: 100%; }
     .error { color: red; padding-left: 10px; }
     .error1 { color: red; padding-left: 10px; }
     .error2 { color: red; padding-left: 10px; }
@@ -68,7 +72,7 @@
     .error5 { color: red; padding-left: 10px; }
     .error6 { color: red; padding-left: 10px; }
     .submit { margin-left: 125px; margin-top: 10px;}
-</style>
+  </style>
 </head>
 <body>
 
@@ -91,11 +95,11 @@
         </div>
     </div>
 </div>
-<div class="container" style="margin-top:20px">
+<div class="container" style="margin-top:20px;">
   <div class="row">
     <div class="col-sm-2">
     </div>
-    <div class="col-sm-8" style="background-color: #a8dadc;">
+    <div class="col-sm-8" style="background-color: #a8dadc; outline-style: outset; outline-color: #457b9d; box-shadow: 8px 8px 4px rgb(155, 155, 155);">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
@@ -283,7 +287,7 @@
                             </span>
                         </div>
                         <div class="col-sm-4">
-                            <input type="text" class="dob" id="datepicker" style="width: 200px;" placeholder="Date of Birth"/>
+                            <input type="text" class="dob" id="datepicker" style="max-width: 100%;" placeholder="Date of Birth"/>
                             <span class="error6">
                                 <p style="font-size:11px; text-align: right;">*Select your date of birth</p>
                             </span>
@@ -296,12 +300,15 @@
                         <div class="col-sm-4">
                             <input type="radio" name="gender" class="infobox" value="Male">  Male<br>
                             <input type="radio" name="gender" class="infobox" value="Female">  Female<br>
+                            <span class="error5">
+                                <p style="font-size:11px; text-align: right;">*Select one gender</p>
+                            </span>
                         </div>
                     </div>
-                    <input class="submit" type="submit" value="Submit">
-                    <span class="error5">
-                        <p style="font-size:11px; text-align: right;">*Select one gender</p>
-                    </span>
+                    <p style="margin-top: 30px; text-align: left; font-size: 11px;">By clicking "Submit", you agree to the <a href=#>Terms</a> and <a href=#>Privacy Policy</a></p>
+                    <div class="row">
+                        <input class="submit" type="submit" value="Submit">
+                    </div>
                 </form>   
             </div>
                     
@@ -316,5 +323,3 @@
 
 </body>
 </html>
-<!--Tio Arya Dewa Prakasa, 05211940000063-->
-<!--Reference : yahoo.com-->
