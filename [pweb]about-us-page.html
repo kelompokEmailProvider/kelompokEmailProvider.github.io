@@ -19,56 +19,41 @@
             margin:0;
             font-family: Arial, Helvetica, sans-serif;
         }
-        /*Style Header*/
-        .header {
-            overflow: hidden;
-            height: 75px;
-            width: 100%;
+        
+        nav {
             background-color: #f1faee;
-            top: 0;
-            z-index: 0;
-            padding: 10px 10px;
-        }
-        /*Style header link*/
-        .header a {
-            float: left;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            text-decoration: none;
-            font-size: 18px;
-            line-height: 25px;
-            border-radius: 4px;
+            height: 80px;
+            width: 100%;
         }
 
-        /*Style the logo*/
-        .header a logo {
-            width:fit-content;
+        label .logo {
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
         }
 
-        /*Make effect when mouse-over*/
-        .header a:hover {
-            border-bottom: 2px solid black;
-        }
-
-        .header-left {
-            float: left;
-        }
-
-        .header-right {
+        nav ul {
             float: right;
+            margin-right: 20px;
         }
 
-        /*Make responsive*/
-        @media screen and (max-width: 500px;) {
-            .header a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-            .header-right {
-                float: none;
-            }
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: black;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: white;
+            transition: .5s;
         }
 
         /*Customize the list*/
@@ -114,16 +99,16 @@
 </head>
 
 <body>
-   <div class="header">
-       <div class="header-left">
-             <img src="img/itsmail-logo.png" alt="logo itsmail" width="175" height="57">
-       </div>
-       <div class="header-right">
-           <a href="index.html">Home</a>
-           <a href="contactUs.html">Contact Us</a>
-           <a type="button" class="btn btn-primary" style="color:white" href="createAccountForm.html">Sign Up</a>
-       </div>
-   </div>
+   <nav>
+       <label class="logo">
+           <img src="img/itsmail-logo.png">
+       </label>
+       <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="contactUs.html">Contact Us</a></li>
+           <li><a type="button" class="btn btn-primary" href="createAccountForm.html">Sign Up</a></li>
+       </ul>
+   </nav>
     
     
 
