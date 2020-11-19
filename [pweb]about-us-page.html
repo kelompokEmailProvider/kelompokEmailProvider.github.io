@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -21,8 +22,12 @@
         /*Style Header*/
         .header {
             overflow: hidden;
+            height: 75px;
+            width: 100%;
             background-color: #f1faee;
-            padding: 15px 10px;
+            top: 0;
+            z-index: 0;
+            padding: 10px 10px;
         }
         /*Style header link*/
         .header a {
@@ -31,21 +36,29 @@
             text-align: center;
             padding: 10px;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 18px;
             line-height: 25px;
             border-radius: 4px;
         }
+
         /*Style the logo*/
         .header a logo {
             width:fit-content;
         }
+
         /*Make effect when mouse-over*/
         .header a:hover {
             border-bottom: 2px solid black;
         }
+
+        .header-left {
+            float: left;
+        }
+
         .header-right {
             float: right;
         }
+
         /*Make responsive*/
         @media screen and (max-width: 500px;) {
             .header a {
@@ -57,37 +70,62 @@
                 float: none;
             }
         }
-    </style>
 
-    <style>
-        .footer {
-            position: relative;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1faee;
-            color: black;
-            text-align: center;
-        }
-    </style>
-
-    <style>
         /*Customize the list*/
         ul.list {
             list-style-type: none;
         }
+
+        footer {
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+            background-color: #f1faee;
+        }
+
+        .main-content {
+            display: flex;
+        }
+
+        .main-content .box {
+            flex-basis: 50%;
+            padding: 10px 20px;
+        }
+
+        .box h2 {
+            font-size: 1.12543rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .box .content {
+            margin: 10px 0 0 0;
+
+        }
+
+        img {
+            width: 100%;
+        }
+
+        
+
+
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <img src="img/itsmail-logo.png" alt="logo itsmail">
-        <div class="header-right">
-            <a href=" ">FAQ</a>
-            <a href=" ">Syarat & Ketentuan</a>
-            <a href=" ">Kebijakan Privasi</a>
-        </div>
-    </div>
+   <div class="header">
+       <div class="header-left">
+             <img src="img/itsmail-logo.png" alt="logo itsmail" width="175" height="57">
+       </div>
+       <div class="header-right">
+           <a href="index.html">Home</a>
+           <a href="contactUs.html">Contact Us</a>
+           <a type="button" class="btn btn-primary" style="color:white" href="createAccountForm.html">Sign Up</a>
+       </div>
+   </div>
+    
+    
 
     <div class="u__history_page">
         <div class="mb-md-5 pt-md-5 pt-3">
@@ -102,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <img src="img/its-mail-logo.png" alt="logo its mail">
+                                <img src="img/itsmail-logo.png" alt="logo its mail">
                             </div>
                         </div>
 
@@ -135,62 +173,46 @@
         </div>
     </div>
 
-    <section class="footer">
-        <div class="u__container">
-            <div class="row wraper-d-footer">
-                <div class="col-w-37">
-                    <div class="about_us">
-                        <div class="title">
-                            <p>Tentang Kami</p>
-                        </div>
-                        <ul class="list">
-                            <li>
-                                <a href=" " style="color: black">FAQ</a>
-                            </li>
-                            <li>
-                                <a href=" " style="color: black">Syarat & Ketentuan</a>
-                            </li>
-                            <li>
-                                <a href=" " style="color: black">Kebijakan Privasi</a>
-                            </li>
-                        </ul>
+    <footer>
+        <div class="main-content">
+            <div class="left box">
+                <h2>About Us</h2>
+                <div class="content">
+                    <div class="faq">
+                        <a href="#"  style="color: black">FAQ</a>
                     </div>
-                </div>
-        
-                <div class="col-w-25">
-                    <div class="partner">
-                        <div class="title">
-                            <p>Partner Kami</p>
-                        </div>
-                        <ul class="list">
-                            <li>
-                                <a href="https://www.halodoc.com/" style="color: black">Halodoc</a>
-                            </li>
-                        </ul>
+                    <div class="terms">
+                        <a href="#"  style="color: black">Syarat & Ketentuan</a>
                     </div>
-                </div>
-        
-                <div class="col-w-18">
-                    <div class="follow_us">
-                        <div class="title">
-                            <p>Ikuti Kami</p>
-                        </div>
-                        <ul class="list">
-                            <li>
-                                <i class="fa fa-twitter"> @ITSMail</i>
-                            </li>
-                            <li>
-                                <i class="fa fa-facebook-f"> ITSMailOfficial</i>
-                            </li>
-                            <li>
-                                <i class="fa fa-instagram"> therealITSMail</i>
-                            </li>
-                        </ul>
+                    <div class="privacy">
+                        <a href="#"  style="color: black">Kebijakan Privasi</a>
                     </div>
                 </div>
             </div>
+
+            <div class="center box">
+                <h2>Our Partner</h2>
+                <div class="halodoc">
+                    <a href="https://www.halodoc.com/"  style="color: black">Halodoc</a>
+                </div>
+            </div>
+
+            <div class="right box">
+                <h2>Follow Us</h2>
+            <div class="twitter">
+                <span class="fa fa-twitter"></span>
+                <span class="text">ITSMail</span>
+            </div>
+            <div class="facebook">
+                <span class="fa fa-facebook-f"></span>
+                <span class="text">ITSMailOfficial</span>
+            </div>
+            <div class="instagram">
+                <span class="fa fa-instagram"></span>
+                <span class="text">theRealITSMail</span>
+            </div>
         </div>
-    </section>
+    </footer>
             
 </body>
 </html>
